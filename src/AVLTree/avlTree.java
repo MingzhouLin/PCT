@@ -116,6 +116,29 @@ public class avlTree {
 			}
 		}
 	}
+	public boolean compare(Node a, Node b) {
+		boolean l=false;
+		boolean r=false;
+		if ((a.lChild!=null&&b.lChild!=null)) {
+			 l=compare(a.lChild, b.lChild);
+		}else if (a.lChild==null&&b.lChild==null) {
+			l=true;
+		}else{
+			l=false;
+		}
+		if ((a.rChild!=null&&b.rChild!=null)) {
+			 l=compare(a.rChild, b.rChild);
+		}else if (a.rChild==null&&b.rChild==null) {
+			l=true;
+		}else{
+			l=false;
+		}
+		if (l&&r) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }
 
 class Tree{
@@ -147,3 +170,4 @@ class Node{
 		node.parent=this;
 	}
 }
+
